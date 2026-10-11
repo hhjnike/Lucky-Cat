@@ -276,22 +276,8 @@ async function getFortuneResult() {
 }
 
 function fitResultTitle() {
-    const resultArt = document.querySelector(".result_art");
-
-    const maxSize = resultArt.clientWidth * 0.05;
-
-    let fontSize = maxSize;
-
-    resultTitle.style.fontSize = `${fontSize}px`;
-    resultTitle.style.whiteSpace = "nowrap";
-
-    while (
-        resultTitle.scrollWidth > resultTitle.clientWidth &&
-        fontSize > 10
-    ) {
-        fontSize -= 0.5;
-        resultTitle.style.fontSize = `${fontSize}px`;
-    }
+    resultTitle.style.removeProperty("font-size");
+    resultTitle.style.removeProperty("white-space");
 }
 
 function renderFortuneResult(result) {
